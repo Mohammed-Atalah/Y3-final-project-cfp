@@ -1,0 +1,20 @@
+.SignUpCon {
+  background-color: #f1faee;
+  height: 545px;
+}
+
+.signUpTitle {
+  color: #4a4e69;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 82px;
+  margin-left: 20px;
+  /* identical to box height */
+}
+
+.signUpHalf {
+  width: 50%;
+  background-color: red;
+}

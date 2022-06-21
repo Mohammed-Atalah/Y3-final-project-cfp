@@ -7,11 +7,20 @@ function Welcome() {
         Let’s find you the scholarship that suits you best!
       </p>
       <div className="welcomeSearchCon">
-        <input type="text" placeholder="Degree, Countery , Universty" />
+        <input type="text" placeholder="..." />
         <p>Search</p>
       </div>
-      <p className="welcomeJoinBtn">Join us :)</p>
-      <p className="welcomeLogin">Already have an account? Log in</p>
+      <div
+        style={{
+          display: "flex",
+          "flex-direction": "column",
+          "align-items": "center",
+          "justify-content": "space-around",
+        }}
+      >
+        <p className="welcomeJoinBtn">Join us :)</p>
+        <p className="welcomeLogin">Already have an account? Log in</p>
+      </div>
     </div>
   );
 }

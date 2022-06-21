@@ -72,7 +72,7 @@
 
 .welcomeJoinBtn {
   background-color: #f1faee;
-  width: auto;
+  width: 100px;
   border-radius: 5px;
   display: flex;
   align-items: center;

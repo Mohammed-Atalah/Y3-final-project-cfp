@@ -1,0 +1,38 @@
+.footerCon {
+  height: 100px;
+  background-color: #1d3557;
+  display: flex;
+  padding-top: 20px;
+}
+
+.footerIcone {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.footerReachCon {
+  margin-left: 40px;
+}
+
+.footerReachCon div {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footerFollowCon {
+  margin-left: 40px;
+}
+
+.footerTitle {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.footerReachCon p {
+  color: white;
+  margin-right: 20px;
+}
