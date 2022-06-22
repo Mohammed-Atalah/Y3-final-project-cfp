@@ -11,10 +11,59 @@
   font-size: 30px;
   line-height: 82px;
   margin-left: 20px;
+  margin-bottom: 50px;
   /* identical to box height */
 }
 
 .signUpHalf {
   width: 50%;
-  background-color: red;
+  /* background-color: red; */
+}
+
+.signUpInputText {
+  color: #4a4e69;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.SignUpInput {
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+.SignUpInput input {
+  background-color: #f1faee;
+  /* background-color: red; */
+  height: 30px;
+  width: 400px;
+  border: none;
+  color: rgba(74, 78, 105, 1);
+  border-bottom: 2px solid rgba(29, 53, 87, 1);
+  outline: none;
+  font-size: 16px;
+}
+
+.SignUpInput input::active {
+  border: none;
+  border-bottom: 2px solid rgba(29, 53, 87, 1);
+  outline: none;
+}
+
+.signUpBtn {
+  background-color: #e63946;
+  width: 16%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 45px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.signUpBtn:hover {
+  background-color: #dd303f;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: grab;
 }
