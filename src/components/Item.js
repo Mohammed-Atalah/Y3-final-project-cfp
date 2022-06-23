@@ -1,9 +1,10 @@
 import "../styles/Item.css";
 
 function Item({ data }) {
+  console.log(data.imgURL);
   return (
     <div style={{ display: "flex" }} className="item">
-      {data.imgUrl && <img className="itemImg" src={data.imgUrl} alt="Logo" />}
+      {data.imgURL && <img className="itemImg" src={data.imgURL} alt="Logo" />}
       <div>
         {data.title && <p className="itemTitle">{data.title}</p>}
         {data.organizer && <p className="itemOrganizer">{data.organizer}</p>}

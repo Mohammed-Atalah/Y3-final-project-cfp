@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className="navBarCon">
-      {/* <Link style={{ "text-decoration": "none" }} to="/"> */}
-      <p className="navTitle">Be Prepared.</p>
-      {/* </Link> */}
+      <Link style={{ "text-decoration": "none" }} to="/">
+        <p className="navTitle">We STEM It.</p>
+      </Link>
       <ul className="navPagesCon">
         <Link style={{ "text-decoration": "none" }} to="/scholarships">
           <li>Scholarships</li>
@@ -18,12 +18,12 @@ function NavBar() {
         <Link style={{ "text-decoration": "none" }} to="/tests">
           <li>Tests</li>
         </Link>
-        <li>
-          <p>Volunteer</p>
-        </li>
-        <li>
+        <Link style={{ "text-decoration": "none" }} to="/STEM">
+          <li>STEM Learning Sources</li>
+        </Link>
+        {/* <li>
           <p>Contact Us</p>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

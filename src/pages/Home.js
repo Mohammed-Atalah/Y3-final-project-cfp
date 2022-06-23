@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Welcome from "../components/Welcom";
+import Welcome from "../components/Welcome";
 
 function Home() {
   return (

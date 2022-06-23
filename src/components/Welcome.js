@@ -18,8 +18,8 @@ function Welcome() {
           "justify-content": "space-around",
         }}
       >
-        <p className="welcomeJoinBtn">Join us :)</p>
-        <p className="welcomeLogin">Already have an account? Log in</p>
+        {/* <p className="welcomeJoinBtn">Join us :)</p>
+        <p className="welcomeLogin">Already have an account? Log in</p> */}
       </div>
     </div>
   );

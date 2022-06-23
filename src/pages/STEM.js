@@ -3,11 +3,11 @@ import Items from "../components/Items";
 import { db } from "../firebaseconfig";
 import { onSnapshot, collection, getDocs } from "firebase/firestore";
 
-function Scholarships() {
+function STEM() {
   // const scholarshipsRef = db.collection("scholarships");
 
   // console.log(Data);
-  return <Items title="Scholarships" />;
+  return <Items title="STEM learning sources" />;
 }
 
-export default Scholarships;
+export default STEM;

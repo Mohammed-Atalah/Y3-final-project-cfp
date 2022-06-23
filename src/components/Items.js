@@ -1,20 +1,35 @@
 import "../styles/Items.css";
 import Item from "./Item";
 import React, { useState } from "react";
+import { db } from "../firebaseconfig";
+import { onSnapshot, collection, getDocs } from "firebase/firestore";
 
-function Items({ title, mainData }) {
-  const [Data, setData] = useState(mainData);
-
+function Items({ title }) {
+  const [Data, setData] = React.useState([]);
+  const [mainData, setMainData] = React.useState([]);
+  // console.log(Data);
+  React.useEffect(() => {
+    onSnapshot(collection(db, title.toLowerCase()), (snapshot) => {
+      let newData = [];
+      setData(
+        snapshot.docs.map((doc) => newData.push({ ...doc.data(), id: doc.id }))
+      );
+      setData(newData);
+      setMainData(newData);
+      // console.log(newData);
+    });
+  }, []);
   const Filter = (str) => {
     console.log(str);
-    const newData = mainData.filter((el) => {
-      if (str === "") {
-        return el;
-      } else {
-        return el.title.toLowerCase().includes(str.toLowerCase());
-      }
-    });
-    setData(newData);
+    setData(
+      mainData.filter((el) => {
+        if (str === "") {
+          return el;
+        } else {
+          return el.title.toLowerCase().includes(str.toLowerCase());
+        }
+      })
+    );
   };
   return (
     <div className="iteems">

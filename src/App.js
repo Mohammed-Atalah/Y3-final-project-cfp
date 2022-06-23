@@ -12,6 +12,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import STEM from "./pages/STEM";
 
 function App() {
   return (
@@ -20,11 +21,12 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
+          {/* <Route path="/signup" element={<SignUp />} /> */}
           {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/tests" element={<Tests />} />
+          <Route path="/STEM" element={<STEM />} />
         </Routes>
       </div>
     </Router>
