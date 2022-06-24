@@ -39,6 +39,7 @@ function Items({ title }) {
           type="text"
           placeholder="Search"
           onChange={(e) => Filter(e.target.value)}
+          autoFocus
         />
       </div>
       <div

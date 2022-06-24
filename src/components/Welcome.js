@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Welcome.css";
 
 function Welcome() {
@@ -6,10 +7,14 @@ function Welcome() {
       <p className="welcomeIntroSent">
         Let’s find you the scholarship that suits you best!
       </p>
-      <div className="welcomeSearchCon">
+      <Link
+        className="welcomeSearchCon"
+        style={{ "text-decoration": "none" }}
+        to="/scholarships"
+      >
         <input type="text" placeholder="..." />
         <p>Search</p>
-      </div>
+      </Link>
       <div
         style={{
           display: "flex",
