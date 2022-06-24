@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import "./styles/NavBar.css";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import SignUp from "./pages/SignUp";
 import Scholarships from "./pages/Scholarships";
 import Universities from "./pages/ Universities";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/tests" element={<Tests />} />
           <Route path="/STEM" element={<STEM />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
 

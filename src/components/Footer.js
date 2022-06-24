@@ -15,7 +15,7 @@ function Footer() {
             className="footerIcone"
             src={require("../images/mailLogo.png")}
           />
-          <p>help@beprepared.com</p>
+          <p>help@westemitcfp.com</p>
         </div>
       </div>
       <div className="footerFollowCon">

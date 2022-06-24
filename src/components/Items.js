@@ -7,7 +7,6 @@ import { onSnapshot, collection, getDocs } from "firebase/firestore";
 function Items({ title }) {
   const [Data, setData] = React.useState([]);
   const [mainData, setMainData] = React.useState([]);
-  // console.log(Data);
   React.useEffect(() => {
     onSnapshot(collection(db, title.toLowerCase()), (snapshot) => {
       let newData = [];
@@ -16,20 +15,35 @@ function Items({ title }) {
       );
       setData(newData);
       setMainData(newData);
-      // console.log(newData);
     });
   }, []);
   const Filter = (str) => {
-    console.log(str);
+    let e = 0;
+    let sz = mainData.length;
+    let i = 0;
+    let notFound = false;
     setData(
       mainData.filter((el) => {
+        i++;
         if (str === "") {
           return el;
         } else {
-          return el.title.toLowerCase().includes(str.toLowerCase());
+          if (el.title.toLowerCase().includes(str.toLowerCase())) {
+            e++;
+            return true;
+          } else {
+            if (i === sz && e === 0) {
+              notFound = true;
+            }
+            return false;
+          }
+          // return el.title.toLowerCase().includes(str.toLowerCase());
         }
       })
     );
+    if (notFound) {
+      setData([{ title: `We couldn't find anything for "${str}"` }]);
+    }
   };
   return (
     <div className="iteems">
