@@ -3,6 +3,9 @@ import Item from "./Item";
 import React from "react";
 import { db } from "../firebaseconfig";
 import { onSnapshot, collection } from "firebase/firestore";
+import TextField from "@mui/material/TextField";
+import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import Box from "@mui/material/Box";
 
 function Items({ title }) {
   const [Data, setData] = React.useState([]);
@@ -48,18 +51,31 @@ function Items({ title }) {
   return (
     <div className="iteems">
       <p className="itemsTitle">{title}</p>
-      <div className="itemsSearchCon">
-        <input
-          type="text"
-          placeholder="Search"
+
+      <Box
+        sx={{ display: "flex", alignItems: "flex-end" }}
+        className="itemsSearchCon"
+      >
+        {/* <SearchTwoToneIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
+        <TextField
+          id="input-with-sx"
+          label="Search"
+          variant="standard"
           onChange={(e) => Filter(e.target.value)}
+          sx={{ width: "400px" }}
+          // color="secondary"
+          // size="normal"
           autoFocus
         />
-      </div>
+      </Box>
+      {/* <div className="itemsSearchCon">
+        <input type="text" placeholder="Search" />
+      </div> */}
       <div
         style={{
           display: "flex",
           "flex-wrap": "wrap",
+          "justify-content": "space-around",
         }}
       >
         {Data.map((obj) => (

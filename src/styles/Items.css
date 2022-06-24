@@ -12,49 +12,7 @@
 }
 
 .itemsSearchCon {
-  background: #f1faee;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 50px;
-  width: 600px;
-  border-radius: 10px;
-  background: #f1faee;
   margin-bottom: 40px;
   margin-left: 40px;
-  box-shadow: 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.itemsSearchCon input {
-  background-color: transparent;
-  /* background-color: red; */
-  border: none;
-  outline: none;
-  height: 100%;
-  width: 90%;
-  font-size: 20px;
-  color: #1d3557;
-  /* margin-left: 30px; */
-}
-.itemsSearchCon input::active {
-  border: none;
-  outline: none;
-}
-
-.itemsSearchCon p {
-  background-color: #e63946;
-  width: 16%;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 45px;
-  font-size: 22px;
-  color: #ffffff;
-}
-
-.itemsSearchCon p:hover {
-  background-color: #dd303f;
-  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: grab;
+  /* width: 400px !important; */
 }
