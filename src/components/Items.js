@@ -1,8 +1,8 @@
 import "../styles/Items.css";
 import Item from "./Item";
-import React, { useState } from "react";
+import React from "react";
 import { db } from "../firebaseconfig";
-import { onSnapshot, collection, getDocs } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 
 function Items({ title }) {
   const [Data, setData] = React.useState([]);

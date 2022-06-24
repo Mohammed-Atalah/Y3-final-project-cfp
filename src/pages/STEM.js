@@ -3,7 +3,7 @@ import Items from "../components/Items";
 function STEM() {
   return (
     <>
-      <Items title="STEM learning sources" />
+      <Items title="STEM Learning Sources" />
     </>
   );
 }
