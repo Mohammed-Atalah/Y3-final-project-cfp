@@ -1,6 +1,5 @@
 .itemsTitle {
   font-size: 30px;
-  margin-top: 20px;
   font-weight: 600;
   margin-left: 20px;
   color: #1d3557;
@@ -15,4 +14,9 @@
   margin-bottom: 40px;
   margin-left: 40px;
   /* width: 400px !important; */
+}
+
+.itemsCon {
+  background-color: #ebf6e7;
+  padding-top: 40px;
 }

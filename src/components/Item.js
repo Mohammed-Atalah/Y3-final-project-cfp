@@ -8,6 +8,10 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 
 export default function Item({ data }) {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+  const [hover, setHover] = React.useState(false);
   return (
     <Card
       sx={{
@@ -15,6 +19,19 @@ export default function Item({ data }) {
         "margin-bottom": "40px",
         " display": "flex",
         "flex-direction": "column",
+      }}
+      // onMouseOver={() => {
+      //   console.log("hello");
+      // }}
+      raised={hover}
+      onMouseOver={() => {
+        setHover(true);
+      }}
+      onMouseOut={() => {
+        setHover(false);
+      }}
+      onClick={() => {
+        openInNewTab(data.link);
       }}
     >
       <Box

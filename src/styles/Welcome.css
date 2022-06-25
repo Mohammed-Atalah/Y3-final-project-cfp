@@ -52,7 +52,7 @@
   outline: none;
 }
 
-.welcomeSearchCon p {
+.welcomeSearchBtn {
   background-color: #e63946;
   width: 16%;
   border-radius: 5px;
@@ -64,7 +64,7 @@
   color: #ffffff;
 }
 
-.welcomeSearchCon p:hover {
+.welcomeSearchBtn:hover {
   background-color: #dd303f;
   box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
   cursor: grab;
