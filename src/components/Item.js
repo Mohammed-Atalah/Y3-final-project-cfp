@@ -20,9 +20,6 @@ export default function Item({ data }) {
         " display": "flex",
         "flex-direction": "column",
       }}
-      // onMouseOver={() => {
-      //   console.log("hello");
-      // }}
       raised={hover}
       onMouseOver={() => {
         setHover(true);

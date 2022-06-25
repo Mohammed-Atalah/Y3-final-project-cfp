@@ -31,10 +31,7 @@ function Welcome() {
           "align-items": "center",
           "justify-content": "space-around",
         }}
-      >
-        {/* <p className="welcomeJoinBtn">Join us :)</p>
-        <p className="welcomeLogin">Already have an account? Log in</p> */}
-      </div>
+      ></div>
     </div>
   );
 }

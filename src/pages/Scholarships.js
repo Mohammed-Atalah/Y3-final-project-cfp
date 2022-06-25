@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 
 function Scholarships() {
   const location = useLocation();
-  let e = false;
   let str = "";
   if (location.state !== null) {
     str = location.state.searchStr;

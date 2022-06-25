@@ -64,7 +64,6 @@ function Items({ title, searchData = "" }) {
             }
             return false;
           }
-          // return el.title.toLowerCase().includes(str.toLowerCase());
         }
       })
     );
@@ -80,22 +79,16 @@ function Items({ title, searchData = "" }) {
         sx={{ display: "flex", alignItems: "flex-end" }}
         className="itemsSearchCon"
       >
-        {/* <SearchTwoToneIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} /> */}
         <TextField
           id="input-with-sx"
           label="Search"
           variant="standard"
           onChange={(e) => Filter(e.target.value)}
           sx={{ width: "400px" }}
-          // color="secondary"
-          // size="normal"
           autoFocus
           defaultValue={searchData}
         />
       </Box>
-      {/* <div className="itemsSearchCon">
-        <input type="text" placeholder="Search" />
-      </div> */}
       <div
         style={{
           display: "flex",
