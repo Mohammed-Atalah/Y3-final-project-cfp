@@ -15,7 +15,7 @@ export default function Item({ data }) {
   return (
     <Card
       sx={{
-        width: 345,
+        width: "300px",
         "margin-bottom": "40px",
         " display": "flex",
         "flex-direction": "column",

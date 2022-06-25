@@ -72,7 +72,7 @@ function Items({ title, searchData = "" }) {
     }
   };
   return (
-    <div className="iteems">
+    <div className="items">
       <p className="itemsTitle">{title}</p>
 
       <Box
@@ -84,7 +84,7 @@ function Items({ title, searchData = "" }) {
           label="Search"
           variant="standard"
           onChange={(e) => Filter(e.target.value)}
-          sx={{ width: "400px" }}
+          sx={{ width: "300px" }}
           autoFocus
           defaultValue={searchData}
         />

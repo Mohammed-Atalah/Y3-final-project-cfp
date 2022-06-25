@@ -29,7 +29,7 @@ function App() {
           <Route path="/tests" element={<Tests />} />
           <Route path="/STEM" element={<STEM />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
 

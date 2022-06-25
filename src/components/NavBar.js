@@ -50,6 +50,7 @@ const NavBar = () => {
                   className="nav__link"
                   style={{ "text-decoration": "none" }}
                   to={item.href}
+                  onClick={onToggle}
                 >
                   {item.label}
                 </Link>
