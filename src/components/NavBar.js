@@ -1,27 +1,37 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { auth } from "../firebaseconfig";
 import "../styles/NavBar.css";
+import { signOut } from "firebase/auth";
+
 const topNav = [
   { id: 1, label: "Scholarships", href: "/scholarships" },
   { id: 2, label: "Universities", href: "/universities" },
   { id: 3, label: "Tests", href: "/tests" },
   { id: 5, label: "STEM Learning Sources", href: "/STEM" },
+  { id: 6, label: "Sign out" },
 ];
 
-const getTopNav = () => {
-  return topNav;
-};
-
-const NavBar = () => {
+const NavBar = ({ SignedIn, setSignIn }) => {
+  // console.log(SignedIn);
   const [navItems, setNavItems] = useState([]);
   const [collapse, setCollapse] = useState("nav__menu");
   const [toggleIcon, setToggleIcon] = useState("toggler__icon");
 
   useEffect(() => {
-    setNavItems(getTopNav());
-  }, []);
-
+    console.log(SignedIn);
+    if (SignedIn) {
+      setNavItems(topNav);
+    } else {
+      setNavItems([{ id: 1, label: "Sign In", href: "/signin" }]);
+    }
+  }, [SignedIn]);
+  // if (SignedIn) {
+  //   console.log("IT'S ON ");
+  // } else {
+  //   console.log("NAH HELL NAH");
+  //   setNavItems([{ id: 1, label: "Sign In", href: "/signin" }]);
+  // }
   const onToggle = () => {
     collapse === "nav__menu"
       ? setCollapse("nav__menu nav__collapse")
@@ -44,18 +54,38 @@ const NavBar = () => {
             We STEM It
           </Link>
           <ul className={collapse}>
-            {navItems.map((item) => (
-              <li key={item.id} className="nav__item">
-                <Link
-                  className="nav__link"
-                  style={{ "text-decoration": "none" }}
-                  to={item.href}
-                  onClick={onToggle}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              if (item.label === "Sign out") {
+                return (
+                  <li
+                    key={item.id}
+                    className="nav__item"
+                    className="nav__link"
+                    style={{ "text-decoration": "none", cursor: "grab" }}
+                    onClick={() => {
+                      setSignIn(false);
+                      signOut(auth);
+                      console.log("got em");
+                    }}
+                  >
+                    Sign Out
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={item.id} className="nav__item">
+                    <Link
+                      className="nav__link"
+                      style={{ "text-decoration": "none" }}
+                      to={item.href}
+                      onClick={onToggle}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
           <div className={toggleIcon} onClick={onToggle}>
             <div className="line__1"></div>

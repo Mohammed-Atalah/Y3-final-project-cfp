@@ -10,11 +10,7 @@ function Welcome() {
         Let’s find you the scholarship that suits you best!
       </p>
       <div className="welcomeSearchCon">
-        <input
-          type="text"
-          placeholder="..."
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setSearch(e.target.value)} />
         <Link
           style={{ "text-decoration": "none" }}
           to="/scholarships"
