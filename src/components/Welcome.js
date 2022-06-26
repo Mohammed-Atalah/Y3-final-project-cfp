@@ -9,7 +9,7 @@ function Welcome() {
       <p className="welcomeIntroSent">
         Let’s find you the scholarship that suits you best!
       </p>
-      {/* <div className="welcomeSearchCon">
+      <div className="welcomeSearchCon">
         <input
           type="text"
           placeholder="..."
@@ -23,7 +23,7 @@ function Welcome() {
         >
           <p>Search</p>
         </Link>
-      </div> */}
+      </div>
       {/* <div
         style={{
           display: "flex",

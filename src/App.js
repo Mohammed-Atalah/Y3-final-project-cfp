@@ -22,25 +22,14 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/signup" element={<SignUp />} /> */}
-          {/* <Route path="/signin" element={<SignIn />} /> */}
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/STEM" element={<STEM />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
-
-    // <div className="App">
-    //   <NavBar />
-    //   {/* <Home /> */}
-    //   {/* <SignUp /> */}
-    //   {/* <Scholarships /> */}
-    //   {/* <Universities /> */}
-    //   {/* <Tests /> */}
-    // </div>
   );
 }
 
