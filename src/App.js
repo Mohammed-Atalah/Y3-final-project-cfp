@@ -15,6 +15,7 @@ import {
 } from "react-router-dom";
 import STEM from "./pages/STEM";
 import React, { useEffect } from "react";
+import Favs from "./pages/Favs";
 
 function App() {
   const [SignedIn, setSignIn] = React.useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/universities" element={<Universities />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/STEM" element={<STEM />} />
+          <Route path="/favorites" element={<Favs />} />
           <Route
             path="/SignIn"
             element={<SignIn setSignIn={setSignIn} SignedIn={SignedIn} />}

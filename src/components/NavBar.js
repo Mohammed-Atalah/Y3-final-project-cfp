@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebaseconfig";
 import "../styles/NavBar.css";
 import { signOut } from "firebase/auth";
@@ -9,10 +9,12 @@ const topNav = [
   { id: 2, label: "Universities", href: "/universities" },
   { id: 3, label: "Tests", href: "/tests" },
   { id: 5, label: "STEM Learning Sources", href: "/STEM" },
-  { id: 6, label: "Sign out" },
+  { id: 6, label: "Favorites", href: "/favorites" },
+  { id: 7, label: "Sign out" },
 ];
 
 const NavBar = ({ SignedIn, setSignIn }) => {
+  const navigate = useNavigate();
   // console.log(SignedIn);
   const [navItems, setNavItems] = useState([]);
   const [collapse, setCollapse] = useState("nav__menu");
@@ -65,6 +67,7 @@ const NavBar = ({ SignedIn, setSignIn }) => {
                     onClick={() => {
                       setSignIn(false);
                       signOut(auth);
+                      navigate("/");
                       console.log("got em");
                     }}
                   >

@@ -10,13 +10,13 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { doc, setDoc } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { auth } from "../firebaseconfig";
+import { auth, db } from "../firebaseconfig";
 
 const theme = createTheme();
 
@@ -25,13 +25,24 @@ export default function SignIn({ setSignIn, SignedIn }) {
   // https://www.youtube.com/watch?v=9bXhf_TELP4
   // State on whether this page is "Log In" versus "Sign Up"
   const [isSignInState, setIsSignInState] = useState(true);
-
-  const registerUser = async (email, password) => {
+  const addUser = async (name) => {
+    try {
+      await setDoc(doc(db, "users", auth.currentUser.uid), {
+        name: name,
+        favorites: { scholarships: {}, universities: {}, tests: {}, stem: {} },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const registerUser = async (name, email, password) => {
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(auth.currentUser.uid);
+      addUser(name);
       setSignIn(true);
-      navigate("/");
       // console.log(user);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -64,6 +75,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
     // Handle Sign-In versus Login
     let email = data.get("email");
     let password = data.get("password");
+    let name = data.get("name");
     // console.log({
     //   email: email,
     //   password: password,
@@ -75,7 +87,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
     } else {
       console.log("Trying to sign up...");
       // console.log(data.get("email"));
-      registerUser(email, password);
+      registerUser(name, email, password);
     }
   };
 
@@ -122,6 +134,18 @@ export default function SignIn({ setSignIn, SignedIn }) {
               onSubmit={handleSubmit}
               sx={{ mt: 1 }}
             >
+              {!isSignInState && (
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Full Name"
+                  name="name"
+                  autoComplete="name"
+                  autoFocus
+                />
+              )}
               <TextField
                 margin="normal"
                 required

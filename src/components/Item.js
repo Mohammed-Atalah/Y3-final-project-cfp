@@ -6,10 +6,73 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
+import { auth, db } from "../firebaseconfig";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 
-export default function Item({ data }) {
+export default function Item({ data, title }) {
+  if (title === "STEM Learning Sources") {
+    title = "stem";
+  }
+  // console.log(fav);
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noopener,noreferrer");
+  };
+  // console.log(auth.currentUser.uid);
+  const [fav, setFav] = React.useState();
+
+  const getSetFav = async () => {
+    try {
+      let e = title;
+      if (e.length > 15) {
+        e = "stem";
+      }
+      const docSnap = await getDoc(doc(db, "users", auth.currentUser.uid));
+      setFav(docSnap.data().favorites[e.toLowerCase()][data.id]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    getSetFav();
+  }, []);
+
+  const addToFav = async () => {
+    let e = title;
+    if (e.length > 15) {
+      e = "stem";
+    }
+    try {
+      await setDoc(
+        doc(db, "users", auth.currentUser.uid),
+        {
+          favorites: { [e]: { [data.id]: true } },
+        },
+        { merge: true }
+      );
+      setFav(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const removeFromFav = async () => {
+    let e = title;
+    if (e.length > 15) {
+      e = "stem";
+    }
+    try {
+      await setDoc(
+        doc(db, "users", auth.currentUser.uid),
+        {
+          favorites: { [e]: { [data.id]: false } },
+        },
+        { merge: true }
+      );
+      setFav(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const [hover, setHover] = React.useState(false);
   return (
@@ -27,9 +90,9 @@ export default function Item({ data }) {
       onMouseOut={() => {
         setHover(false);
       }}
-      onClick={() => {
-        openInNewTab(data.link);
-      }}
+      // onClick={() => {
+      //   openInNewTab(data.link);
+      // }}
     >
       <Box
         sx={{
@@ -64,11 +127,35 @@ export default function Item({ data }) {
           sx={{
             display: "flex",
             "margin-top": "16px",
+            "justify-content": "space-between",
           }}
         >
           <Button size="small" href={data.link} target="__blank">
             Learn More
           </Button>
+          {!fav && (
+            <Button
+              size="small"
+              onClick={() => {
+                addToFav();
+              }}
+              target="__blank"
+            >
+              Add to Favorites
+            </Button>
+          )}
+          {fav && (
+            <Button
+              size="small"
+              onClick={() => {
+                removeFromFav();
+              }}
+              sx={{ color: "gray" }}
+              target="__blank"
+            >
+              Remove from Favorites
+            </Button>
+          )}
         </CardActions>
       )}
     </Card>
