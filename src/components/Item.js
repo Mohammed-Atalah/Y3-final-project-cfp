@@ -130,10 +130,12 @@ export default function Item({ data, title }) {
             "justify-content": "space-between",
           }}
         >
-          <Button size="small" href={data.link} target="__blank">
-            Learn More
-          </Button>
-          {!fav && (
+          {data.link && (
+            <Button size="small" href={data.link} target="__blank">
+              Learn More
+            </Button>
+          )}
+          {!fav && data.link && (
             <Button
               size="small"
               onClick={() => {
@@ -144,7 +146,7 @@ export default function Item({ data, title }) {
               Add to Favorites
             </Button>
           )}
-          {fav && (
+          {fav && data.link && (
             <Button
               size="small"
               onClick={() => {
