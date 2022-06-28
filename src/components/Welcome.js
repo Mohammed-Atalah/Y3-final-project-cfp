@@ -6,11 +6,11 @@ function Welcome() {
   const [search, setSearch] = React.useState("");
   return (
     <div className="welcomeCon">
-      <p className="welcomeIntroSent">
-        Let’s find you the scholarship that suits you best!
-      </p>
+      <p className="welcomeIntroSent"/>
+      
+  
       <div className="welcomeSearchCon">
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
+        <input placeholder="Search for a scholarship" type="text" onChange={(e) => setSearch(e.target.value)} />
         <Link
           style={{ "text-decoration": "none" }}
           to="/scholarships"

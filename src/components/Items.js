@@ -60,7 +60,7 @@ function Items({ title, searchData = "", dataIsProvided = false, data }) {
 
     if (title === "Scholarships") {
       setBg(
-        "https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://images.pexels.com/photos/12209943/pexels-photo-12209943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       );
     } else if (title === "Universities") {
       setBg(
