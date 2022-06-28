@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import { auth, db } from "../firebaseconfig";
 import { doc, setDoc, getDoc } from "firebase/firestore";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Item({ data, title }) {
   if (title === "STEM Learning Sources") {
@@ -136,27 +138,22 @@ export default function Item({ data, title }) {
             </Button>
           )}
           {!fav && data.link && (
-            <Button
-              size="small"
+            <FavoriteBorderIcon
+              sx={{ color: "gray " }}
               onClick={() => {
                 addToFav();
               }}
-              target="__blank"
-            >
-              Add to Favorites
-            </Button>
+            />
           )}
+
           {fav && data.link && (
-            <Button
+            <FavoriteIcon
               size="small"
               onClick={() => {
                 removeFromFav();
               }}
-              sx={{ color: "gray" }}
-              target="__blank"
-            >
-              Remove from Favorites
-            </Button>
+              sx={{ color: "red" }}
+            />
           )}
         </CardActions>
       )}

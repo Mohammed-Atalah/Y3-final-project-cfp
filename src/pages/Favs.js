@@ -136,6 +136,7 @@ function Favs() {
 
   return (
     <div className="itemsCon">
+      <p>Favorites</p>
       {scholarshipsCheck && scholarships.length > 0 && (
         <Items title="Scholarships" dataIsProvided={true} data={scholarships} />
       )}
