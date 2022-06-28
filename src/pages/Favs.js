@@ -145,7 +145,7 @@ function Favs() {
       )}
 
       {testsCheck && tests.length > 0 && (
-        <Items title="Test" dataIsProvided={true} data={tests} />
+        <Items title="Tests" dataIsProvided={true} data={tests} />
       )}
       {stemCheck && stem.length > 0 && (
         <Items
