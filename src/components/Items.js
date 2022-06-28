@@ -58,19 +58,24 @@ function Items({ title, searchData = "", dataIsProvided = false, data }) {
       setData(data);
     }
 
-    if (title==="Scholarships"){
-      setBg("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-    }
-    else if (title==="Universities"){
-      setBg("https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-    }
-    else if (title==="Tests"){
-      setBg("https://images.pexels.com/photos/6683392/pexels-photo-6683392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-    }
-    else if (title==="STEM Learning Sources"){
+    if (title === "Scholarships") {
+      setBg(
+        "https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      );
+    } else if (title === "Universities") {
+      setBg(
+        "https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      );
+    } else if (title === "Tests") {
+      setBg(
+        "https://images.pexels.com/photos/6683392/pexels-photo-6683392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      );
+    } else if (title === "STEM Learning Sources") {
       console.log(title);
 
-      setBg("https://images.pexels.com/photos/9553905/pexels-photo-9553905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+      setBg(
+        "https://images.pexels.com/photos/9553905/pexels-photo-9553905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      );
     }
   }, []);
 
@@ -102,29 +107,36 @@ function Items({ title, searchData = "", dataIsProvided = false, data }) {
     }
   };
   return (
-    <div className="items" style = {{"background-image":`url(${bg})`}}>
-      <p className="itemsTitle">{title}</p>
+    <div className="items" style={{ "background-image": `url(${bg})` }}>
+      <div className="itemsWhiteLayer">
+        <p className="itemsTitle">{title}</p>
 
-      <Box
-        sx={{ display: "flex", alignItems: "flex-end" }}
-        className="itemsSearchCon"
-      >
-        <div className="welcomeSearchCon">
-          <input placeholder="Search" onChange={(e) => Filter(e.target.value)}
-            autoFocus
-            defaultValue={searchData} type="text" />
+        <Box
+          // sx={{ display: "flex", alignItems: "center" }}
+          className="itemsSearchCon"
+        >
+          <div className="welcomeSearchCon">
+            <input
+              placeholder="Search"
+              onChange={(e) => Filter(e.target.value)}
+              autoFocus
+              defaultValue={searchData}
+              type="text"
+            />
+          </div>
+        </Box>
+        <div
+          style={{
+            display: "flex",
+            "flex-wrap": "wrap",
+            width: "100%",
+            "justify-content": "space-around",
+          }}
+        >
+          {Data.map((obj) => {
+            return <Item data={obj} title={title.toLowerCase()} />;
+          })}
         </div>
-      </Box>
-      <div
-        style={{
-          display: "flex",
-          "flex-wrap": "wrap",
-          "justify-content": "space-around",
-        }}
-      >
-        {Data.map((obj) => {
-          return <Item data={obj} title={title.toLowerCase()} />;
-        })}
       </div>
     </div>
   );

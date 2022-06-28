@@ -7,21 +7,31 @@
   text-align: center;
 }
 
+.itemsSearchCon {
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+.items {
+  background-color: #ebf6e7;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
 .items {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-position: center;
-  background-size: auto;
 }
 
-.itemsSearchCon {
-  margin-bottom: 40px;
-  margin-left: 40px;
-}
-
-.itemsCon {
-  background-color: #ebf6e7;
+.itemsWhiteLayer {
   padding-top: 40px;
+  background-color: rgba(248, 247, 216, 0.7);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
