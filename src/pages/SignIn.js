@@ -32,7 +32,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
         favorites: { scholarships: {}, universities: {}, tests: {}, stem: {} },
       });
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
   const registerUser = async (name, email, password) => {
@@ -44,7 +44,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
       // console.log(user);
       navigate("/");
     } catch (error) {
-      console.log(error.message);
+      alert(error.message);
     }
   };
 
@@ -59,7 +59,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
       // You can access the current user
       // console.log(auth.currentUser.email);
     } catch (error) {
-      console.log(error.message);
+      alert(error.message);
     }
   };
 
