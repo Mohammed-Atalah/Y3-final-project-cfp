@@ -10,7 +10,8 @@ const topNav = [
   { id: 3, label: "Tests", href: "/tests" },
   { id: 5, label: "STEM Learning Sources", href: "/STEM" },
   { id: 6, label: "Favorites", href: "/favorites" },
-  { id: 7, label: "Sign out" },
+  { id: 7, label: "About us", href: "/about" },
+  { id: 8, label: "Sign out" },
 ];
 
 const NavBar = ({ SignedIn, setSignIn }) => {
@@ -25,7 +26,14 @@ const NavBar = ({ SignedIn, setSignIn }) => {
     if (SignedIn) {
       setNavItems(topNav);
     } else {
-      setNavItems([{ id: 1, label: "Sign in", href: "/signin" }]);
+      setNavItems([
+        { id: 1, label: "About us", href: "/about" },
+        {
+          id: 2,
+          label: "Sign in",
+          href: "/signin",
+        },
+      ]);
     }
   }, [SignedIn]);
 

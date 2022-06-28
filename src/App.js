@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import Scholarships from "./pages/Scholarships";
 import Universities from "./pages/ Universities";
 import Tests from "./pages/Tests";
+import About from "./pages/About";
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,7 @@ function App() {
           <Route path="/tests" element={<Tests />} />
           <Route path="/STEM" element={<STEM />} />
           <Route path="/favorites" element={<Favs />} />
+          <Route path="/about" element={<About />} />
           <Route
             path="/SignIn"
             element={<SignIn setSignIn={setSignIn} SignedIn={SignedIn} />}

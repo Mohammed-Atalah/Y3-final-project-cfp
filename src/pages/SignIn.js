@@ -53,11 +53,7 @@ export default function SignIn({ setSignIn, SignedIn }) {
       const user = await signInWithEmailAndPassword(auth, email, password);
       setSignIn(true);
       navigate("/");
-      // e.push("/");
-      // useMatch("/");
       console.log(SignedIn);
-      // You can access the current user
-      // console.log(auth.currentUser.email);
     } catch (error) {
       alert(error.message);
     }
