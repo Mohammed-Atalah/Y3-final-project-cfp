@@ -11,7 +11,7 @@ function Footer() {
             src={require("../images/telephoneLogo.png")}
           />
           <p>+970-59X-XXX-XXX</p>
-          <a target="__blank" href="email:hind.wihaidi05@gmail.com">
+          <a style={{ display: "flex", "align-items" : "center"}} target="__blank" href="email:hind.wihaidi05@gmail.com">
             <img
               className="footerIcone"
               src={require("../images/mailLogo.png")}

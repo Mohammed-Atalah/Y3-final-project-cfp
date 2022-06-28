@@ -4,16 +4,21 @@
   margin-left: 20px;
   color: #1d3557;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .items {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: center;
+  background-size: auto;
 }
 
 .itemsSearchCon {
   margin-bottom: 40px;
   margin-left: 40px;
-  /* width: 400px !important; */
 }
 
 .itemsCon {

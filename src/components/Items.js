@@ -10,6 +10,9 @@ import { doc, getDoc } from "firebase/firestore";
 
 function Items({ title, searchData = "", dataIsProvided = false, data }) {
   // console.log(searchData);
+  const [bg, setBg] = React.useState("");
+
+  // console.log(bg);
 
   const [Data, setData] = React.useState([]);
 
@@ -54,6 +57,21 @@ function Items({ title, searchData = "", dataIsProvided = false, data }) {
       // console.log(data);
       setData(data);
     }
+
+    if (title==="Scholarships"){
+      setBg("https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    }
+    else if (title==="Universities"){
+      setBg("https://images.pexels.com/photos/12064/pexels-photo-12064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    }
+    else if (title==="Tests"){
+      setBg("https://images.pexels.com/photos/6683392/pexels-photo-6683392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    }
+    else if (title==="STEM Learning Sources"){
+      console.log(title);
+
+      setBg("https://images.pexels.com/photos/9553905/pexels-photo-9553905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+    }
   }, []);
 
   const Filter = (str) => {
@@ -84,22 +102,18 @@ function Items({ title, searchData = "", dataIsProvided = false, data }) {
     }
   };
   return (
-    <div className="items">
+    <div className="items" style = {{"background-image":`url(${bg})`}}>
       <p className="itemsTitle">{title}</p>
 
       <Box
         sx={{ display: "flex", alignItems: "flex-end" }}
         className="itemsSearchCon"
       >
-        <TextField
-          id="input-with-sx"
-          label="Search"
-          variant="standard"
-          onChange={(e) => Filter(e.target.value)}
-          sx={{ width: "300px" }}
-          autoFocus
-          defaultValue={searchData}
-        />
+        <div className="welcomeSearchCon">
+          <input placeholder="Search" onChange={(e) => Filter(e.target.value)}
+            autoFocus
+            defaultValue={searchData} type="text" />
+        </div>
       </Box>
       <div
         style={{

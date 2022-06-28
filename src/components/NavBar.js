@@ -25,15 +25,10 @@ const NavBar = ({ SignedIn, setSignIn }) => {
     if (SignedIn) {
       setNavItems(topNav);
     } else {
-      setNavItems([{ id: 1, label: "Sign In", href: "/signin" }]);
+      setNavItems([{ id: 1, label: "Sign in", href: "/signin" }]);
     }
   }, [SignedIn]);
-  // if (SignedIn) {
-  //   console.log("IT'S ON ");
-  // } else {
-  //   console.log("NAH HELL NAH");
-  //   setNavItems([{ id: 1, label: "Sign In", href: "/signin" }]);
-  // }
+
   const onToggle = () => {
     collapse === "nav__menu"
       ? setCollapse("nav__menu nav__collapse")
@@ -71,7 +66,7 @@ const NavBar = ({ SignedIn, setSignIn }) => {
                       console.log("got em");
                     }}
                   >
-                    Sign Out
+                    Sign out
                   </li>
                 );
               } else {
